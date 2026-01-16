@@ -1,0 +1,40 @@
+{
+	"type": "bigglobe:rock_layer",
+	"config": {
+		"seed": "generic",
+		"repeat": 8.0,
+		"entries": {
+			"defaults": {
+				"center": {
+					"type": "sum",
+					"layers": [
+						{ "type": "smooth", "scale": 128, "amplitude": 16.0 },
+						{ "type": "smooth", "scale":  64, "amplitude":  8.0 },
+						{ "type": "smooth", "scale":  32, "amplitude":  4.0 }
+					]
+				},
+				"thickness": {
+					"type": "sum",
+					"layers": [
+						{ "type": "smooth", "scale": 32, "amplitude": 4.0 },
+						{ "type": "smooth", "scale": 16, "amplitude": 2.0 },
+						{ "type": "smooth", "scale":  8, "amplitude": 1.0 }
+					]
+				},
+				"restrictions": {
+					"type": "script",
+					"script": "`bigglobe:nether/bubble`.filler ==. 'minecraft:netherrack' ? 1.0 : 0.0"
+				}
+			},
+			"variations": [
+								{
+					"weight": 0.7,
+					"blocks": {
+						"minecraft:netherrack": "tfmg:sulfur",
+						"bigglobe:ashen_netherrack": "tfmg:sulfur"
+					}
+				}
+			]
+		}
+	}
+}

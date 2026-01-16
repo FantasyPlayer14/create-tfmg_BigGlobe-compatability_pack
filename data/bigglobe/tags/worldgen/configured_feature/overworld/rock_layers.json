@@ -1,0 +1,8 @@
+{
+	"replace": false,
+	"values": [
+		"bigglobe:overworld/rock_layers/tfmg_rocks",
+		"bigglobe:overworld/rock_layers/tfmg_oil",
+		"bigglobe:overworld/rock_layers/tfmg_dirt"
+	]
+}

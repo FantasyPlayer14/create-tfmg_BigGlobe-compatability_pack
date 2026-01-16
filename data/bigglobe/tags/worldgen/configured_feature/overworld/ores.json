@@ -1,0 +1,8 @@
+{
+	"replace": false,
+	"values": [
+		"bigglobe:overworld/ores/lead",
+		"bigglobe:overworld/ores/lithium",
+		"bigglobe:overworld/ores/nickel"
+	]
+}

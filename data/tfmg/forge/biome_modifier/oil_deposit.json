@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#bigglobe:is_overworld",
+  "features": "tfmg:oil_deposit",
+  "step": "underground_ores"
+}

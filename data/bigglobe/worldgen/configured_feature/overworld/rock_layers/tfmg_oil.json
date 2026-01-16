@@ -1,0 +1,41 @@
+{
+	"type": "bigglobe:rock_layer",
+	"config": {
+		"seed": "tfmg_oil",
+		"repeat": 64.0,
+		"entries": {
+			"defaults": {
+				"weight": 0.2,
+				"center": {
+					"type": "sum",
+					"layers": [
+						{ "type": "smooth", "scale": 32, "amplitude": 4.0 },
+						{ "type": "smooth", "scale": 64, "amplitude": 8.0 }
+					]
+				},
+				"thickness": {
+					"type": "sum",
+					"layers": [
+						{ "type": "constant", "value": 4.0 },
+						{ "type": "smooth", "scale": 8, "amplitude": 4.0 },
+						{ "type": "smooth", "scale": 4, "amplitude": 2.0 }
+					]
+				}
+			},
+			"variations": [
+				{ "blocks":{"minecraft:stone":"tfmg:crude_oil","minecraft:cobblestone":"tfmg:crude_oil"},
+					"restrictions": {
+						"type": "script",
+						"script": [
+							"double dist = y - world_traits.`bigglobe:approximate_surface_y` + 500.0",
+							"double temperature = world_traits.`bigglobe:temperature_at_surface`",
+							"double multiplier = 1.0 - 1.0 / (cosh(2 * temperature) + 0.1)",
+							"double curve = sqrt(abs(dist) / 5.0) + (dist / 70.0) ^ 4 + 1.0",
+							"return(multiplier / curve)"
+						]
+					}
+				}
+			]
+		}
+	}
+}
