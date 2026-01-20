@@ -1,5 +1,6 @@
 {
     "replace": false,
     "values": [
+        "bigglobe_feature_dispatchers:oil_deposit"
     ]
 }

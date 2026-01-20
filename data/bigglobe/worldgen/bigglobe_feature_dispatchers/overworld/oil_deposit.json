@@ -1,0 +1,14 @@
+{
+    "type": "script",
+    "dispatcher": [
+        "random.if (",
+            "0.1:",
+            "setBlockState(",
+                "minModifiableX + random.nextInt(16),",
+                "-512,",
+                "minModifiableZ + random.nextInt(16),",
+                "'tfmg:oil_deposit'",
+            ")",
+        ")"
+    ]
+}
