@@ -1,6 +1,7 @@
 {
     "replace": false,
     "values": [
+        "bigglobe:overworld/core_lava_spillage",
         "bigglobe_feature_dispatchers:oil_deposit"
     ]
 }
