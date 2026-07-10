@@ -1,0 +1,44 @@
+{
+	"type": "bigglobe:rock_layer",
+	"config": {
+		"seed": "tfmg_lignite",
+		"repeat": 64.0,
+		"entries": {
+			"defaults": {
+				"weight": 0.2,
+				"center": {
+					"type": "sum",
+					"layers": [
+						{ "type": "smooth", "scale": 128, "amplitude": 16.0 },
+						{ "type": "smooth", "scale": 96, "amplitude": 12.0 },
+						{ "type": "smooth", "scale": 64, "amplitude": 8.0 }
+					]
+				},
+				"thickness": {
+					"type": "sum",
+					"layers": [
+						{ "type": "constant", "value": 4.0 },
+						{ "type": "smooth", "scale": 32, "amplitude": 8.0 },
+						{ "type": "smooth", "scale": 8, "amplitude": 4.0 },
+						{ "type": "smooth", "scale": 4, "amplitude": 2.0 }
+					]
+				}
+			},
+			"variations": [
+				{ "blocks":{"minecraft:stone":"tfmg:lignite","minecraft:cobblestone":"tfmg:lignite"},
+					"restrictions": {
+						"type": "script",
+						"script": [
+							
+							"double dist = y - ((abs(world_traits.`bigglobe:approximate_surface_y`) + world_traits.`bigglobe:approximate_surface_y`) / 2) + 370.0",
+							"double temperature = world_traits.`bigglobe:temperature_at_surface`",
+							"double number1 = ((1.0 - 1.0 / (cosh(2 * temperature) + 0.05)) / (sqrt(abs(dist) / 100.0) + (dist / 100.0) ^ 4 + 0.9))",
+							"double number2 = ((1.0 - 1.0 / (cosh(3 * temperature) + 0.1)) / (sqrt(abs(dist) / 5.0) + (dist / 70.0) ^ 4 + 1.0))",
+							"return(number1)"	// - (number2 / 1.3)
+						]
+					}
+				}
+			]
+		}
+	}
+}
